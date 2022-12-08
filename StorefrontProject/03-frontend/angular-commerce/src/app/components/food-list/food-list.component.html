@@ -1,0 +1,32 @@
+<h1>Captain Sanders</h1>
+
+
+<button class="my-button" (click)="toggleFood()">Place Order</button>
+<div *ngIf="toDisplay">
+    <table class = "table" id="table">
+        <thead class = "table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tempItems of foodItems">
+                    
+                    <td class="align-middle">{{tempItems.itemName}}</td>
+                    <td class="align-middle">{{tempItems.itemPrice | currency: 'USD'}}</td>
+                    <button mat-raised-button matTooltip={{tempItems.itemDescription}}>Tooltip</button>
+                    <!-- <td class="align-middle">{{tempItems.itemDescription}}</td> -->
+                    
+            </tr>
+        </tbody>
+    
+    </table>
+
+</div>
+
+
+<Button class="my-button">Checkout</Button>
+
+

@@ -1,0 +1,7 @@
+
+<button (click)='toggleShowTable()' class ="btn-btn-primary">Place Order</button>
+
+<div *ngIf="OrderStarted">
+    <p *ngFor="let tempProduct of products"> {{ tempProduct.name}}: {{tempProduct.unitPrice | currency: 'USD'}} </p>
+</div>
+
